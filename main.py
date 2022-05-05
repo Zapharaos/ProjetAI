@@ -1,18 +1,13 @@
 import os
 from os import walk
-from typing import List
 
 import numpy as np
 import pandas as pd
-from sklearn import linear_model
-from sklearn.metrics import f1_score, accuracy_score
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import precision_recall_fscore_support as score
-import seaborn as sea
-import matplotlib.pyplot as plt
 
+from neuronalnetwork import NeuralNet
 from utils import confusion_matrix, display_confusion_matrix, \
-    display_classification_report_table, ClassificationReport
+    ClassificationReport
 
 
 def prepare_data(file_name: str):
@@ -23,15 +18,26 @@ def prepare_data(file_name: str):
     label = df_columns[14:]
 
     X = df[features]
-    y = df[label]
 
-    y = pd.get_dummies(y)  # one-hot
+    y = pd.get_dummies(df, columns=label)  # one-hot
+    # One-hot not working wtf?
+    y = y[y.columns.values.tolist()[14:]]  # fix
 
     # Question 2 / 3
-    print(df['Class'].value_counts())
+    # print(df['Class'].value_counts())
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20,
                                                         random_state=42)
+
+    net = NeuralNet(X_train=X_train, X_test=X_test, y_train=y_train,
+                    y_test=y_test, hidden_layer_sizes=(3, 2))
+
+    X = X_train.to_numpy().transpose()
+    y = y_train.to_numpy().transpose()
+
+    print(y)
+
+    # net.prop_forward(X)
 
 
 def part3():
@@ -100,8 +106,7 @@ def generate_plots(y_test_file: str = "",
     report.print_values()
     report.print_metrics()
 
-
 if __name__ == '__main__':
     prepare_data('data/synthetic.csv')
 
-    part3()
+# part3()
