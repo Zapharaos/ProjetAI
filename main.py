@@ -44,7 +44,8 @@ def part3():
         # ignore y_test
         if filename == "y_test.csv":
             continue
-        formatted = filename.replace(".csv", "").replace("y_pred_", "")
+        formatted = filename.replace(".csv", "").replace("y_pred_", "") \
+            .replace("_", " ")
         f_formatted = filename.replace(".csv", ".png")
         print("Processing %s" % filename)
         generate_plots(y_test_file="data/predictions/y_test.csv",
