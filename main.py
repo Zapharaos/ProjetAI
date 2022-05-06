@@ -334,7 +334,7 @@ if __name__ == '__main__':
     parser.add_argument("--activation",
                         default="tanh",
                         type=str,
-                        dest="epochs",
+                        dest="activation",
                         help="Activation function (tanh, relu, identity, "
                              "sigmoid)")
     parser.add_argument("--heuristic",
@@ -377,7 +377,18 @@ if __name__ == '__main__':
 
     if args.mode == 0:
         # Calculate Neural Network
-        pass
+        process_neural_network(
+            file_name=args.data,
+            error_plot_file=args.error_plot_file,
+            error_plot_title=args.error_plot_title,
+            confusion_plot_file=args.confusion_plot_file,
+            confusion_plot_title=args.confusion_plot_title,
+            confusion_plot_cmap=args.confusion_plot_cmap,
+            activation=args.activation,
+            hidden_layer_sizes=args.hidden_layer_sizes,
+            heuristic=args.heuristic,
+            epoch=args.epochs
+        )
     elif args.mode == 1:
         part2()
     elif args.mode == 2:
