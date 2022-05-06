@@ -1,0 +1,11 @@
+\chapter{Préparation des données}
+
+Ces données comportent quatorze attributs et les instances sont catégorisées en quatre classes différentes : \texttt{0}, \texttt{1}, \texttt{2}, \texttt{3}. Ces classes comptent respectivement \texttt{674}, \texttt{908}, \texttt{472}, et \texttt{244} instances.
+
+D'après la figure \texttt{1} du sujet, les données ne sont pas linéairement séparables. En effet, on remarque un éparpillement des données et des regroupements entre classes qui rendent impossible la séparation des données. Par exemple : le point \texttt{(10, 11)} où les quatres classes sont présentes.
+
+On distingue deux types de données : les données labelisées et les données numériques. Dans le cas d'un arbre de décision, il est possible d'utiliser des données labelisées, auquel cas il n'est alors pas nécessaire d'encoder en \texttt{one-hot}, ni de normaliser les données.
+
+En revanche, avec un réseau de neurones, il est nécessaire d'utiliser des données numériques. Cependant, des données numériques simples ne sont pas suffisantes car le résultat risque d'être faussé à cause notamment d'un ordonnancement implicites des données, c'est pourquoi on a alors recours à un encodage en \texttt{one-hot}. Dans ce même contexte, il est utile de normaliser les données car, en plus d'améliorer les performances du modèle, cela permet d'équilibrer les données.
+
+Séparer les données en un jeu d'entraînement et un jeu de test, permet tout d'abord de vérifier, via le jeu de test, que l'entraînement a correctement fonctionné. On utilise alors le taux d'erreur qui permet également de vérifier les erreurs, c'est-à-dire de s'assurer que le modèle n'est pas sous-entraîné ou sur-entraîné ce qui aménerait notamment à un modèle inadéquat.

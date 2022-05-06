@@ -1,0 +1,269 @@
+\chapter{Analyse des modèles}
+
+\begin{enumerate}
+    \item Exactitude : le nombre de prédictions correctes sur le nombre de prédictions totales.
+    \item Précision : le nombre de patients correctement identifiés comme malade sur le nombre de patients identifiés comme malade.
+    \item Rappel : le nombre de patients correctement identifiés comme malade sur le nombre de patients malade.
+    \item Score F1 : le rapport entre précision et rappel.
+\end{enumerate}
+
+\section{Modèle \texttt{DT4}}
+
+\begin{table}[ht]
+  \begin{tabular}{ m{5em} | m{1cm}| m{1cm} | m{1cm}| m{1cm} | } 
+  \cline{2-5}
+             & \multicolumn{4}{|c|}{Modèle \texttt{DT4}}\\
+ \hline
+ \multicolumn{1}{|c|}{\textit{Classes}} & \hfil \texttt{c1} & \hfil \texttt{c2} & \hfil \texttt{c3} & \hfil \texttt{c4} \\ 
+  \hline
+  \multicolumn{1}{|c|}{Accuracy} & \hfil 0.83 & \hfil 0.86 & \hfil 0.84 & \hfil 0.90 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Precision} & \hfil 0.71 & \hfil 0.76 & \hfil 0.59 & \hfil 0.67 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Recall} & \hfil 0.83 & \hfil 0.89 & \hfil 0.49 & \hfil 0.12 \\ 
+  \hline
+  \multicolumn{1}{|c|}{F1-score} & \hfil 0.77 & \hfil 0.82 & \hfil 0.54 & \hfil 0.21 \\ 
+  \hline
+\end{tabular}
+\caption{Classification report pour le modèle \texttt{DT4}}
+  \label{Tab:Tcr}
+\end{table}
+
+\begin{table}[H]
+    \includegraphics[scale=0.4]{images/y_pred_DT4.png}
+    \caption{\label{HomePage} Matrice de confusion pour le modèle \texttt{DT4}}
+\end{table}
+
+\newpage
+
+\section{Modèle \texttt{DT5}}
+
+\begin{table}[ht]
+  \begin{tabular}{ m{5em} | m{1cm}| m{1cm} | m{1cm}| m{1cm} | } 
+  \cline{2-5}
+             & \multicolumn{4}{|c|}{Modèle \texttt{DT5}}\\
+ \hline
+ \multicolumn{1}{|c|}{\textit{Classes}} & \hfil \texttt{c1} & \hfil \texttt{c2} & \hfil \texttt{c3} & \hfil \texttt{c4} \\ 
+  \hline
+  \multicolumn{1}{|c|}{Accuracy} & \hfil 0.87 & \hfil 0.89 & \hfil 0.88 & \hfil 0.91\\ 
+  \hline
+  \multicolumn{1}{|c|}{Precision} & \hfil 0.80 & \hfil 0.85 & \hfil 0.66 & \hfil 0.57 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Recall} & \hfil 0.81 & \hfil 0.84 & \hfil 0.75 & \hfil 0.44 \\ 
+  \hline
+  \multicolumn{1}{|c|}{F1-score} & \hfil 0.81 & \hfil 0.85 & \hfil 0.71 & \hfil 0.49 \\ 
+  \hline
+\end{tabular}
+\caption{Classification report pour le modèle \texttt{DT5}}
+  \label{Tab:Tcr}
+\end{table}
+
+\begin{table}[H]
+    \includegraphics[scale=0.5]{images/y_pred_DT5.png}
+    \caption{\label{HomePage} Matrice de confusion pour le modèle \texttt{DT5}}
+\end{table}
+
+\newpage
+
+\section{Modèle \texttt{DT6}}
+
+\begin{table}[ht]
+  \begin{tabular}{ m{5em} | m{1cm}| m{1cm} | m{1cm}| m{1cm} | } 
+  \cline{2-5}
+             & \multicolumn{4}{|c|}{Modèle \texttt{DT6}}\\
+ \hline
+ \multicolumn{1}{|c|}{\textit{Classes}} & \hfil \texttt{c1} & \hfil \texttt{c2} & \hfil \texttt{c3} & \hfil \texttt{c4} \\ 
+  \hline
+  \multicolumn{1}{|c|}{Accuracy} & \hfil 0.89 & \hfil 0.90 & \hfil 0.91 & \hfil 0.93 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Precision} & \hfil 0.85 & \hfil 0.84 & \hfil 0.75 & \hfil 0.69 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Recall} & \hfil 0.83 & \hfil 0.89 & \hfil 0.80 & \hfil 0.52 \\ 
+  \hline
+  \multicolumn{1}{|c|}{F1-score} & \hfil 0.84 & \hfil 0.86 & \hfil 0.77 & \hfil 0.60 \\ 
+  \hline
+\end{tabular}
+\caption{Classification report pour le modèle \texttt{DT6}}
+  \label{Tab:Tcr}
+\end{table}
+
+\begin{table}[H]
+    \includegraphics[scale=0.5]{images/y_pred_DT6.png}
+    \caption{\label{HomePage} Matrice de confusion pour le modèle \texttt{DT6}}
+\end{table}
+
+\newpage
+
+\section{Modèle \texttt{NN relu 6-4}}
+
+\begin{table}[ht]
+  \begin{tabular}{ m{5em} | m{1cm}| m{1cm} | m{1cm}| m{1cm} | } 
+  \cline{2-5}
+             & \multicolumn{4}{|c|}{Modèle \texttt{NN relu 6-4}}\\
+ \hline
+ \multicolumn{1}{|c|}{\textit{Classes}} & \hfil \texttt{c1} & \hfil \texttt{c2} & \hfil \texttt{c3} & \hfil \texttt{c4} \\ 
+  \hline
+  \multicolumn{1}{|c|}{Accuracy} & \hfil 0.94 & \hfil 0.95 & \hfil 0.94 & \hfil 0.92 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Precision} & \hfil 0.94 & \hfil 0.91 & \hfil 0.79 & \hfil 0.65 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Recall} & \hfil 0.87 & \hfil 0.95 & \hfil 0.92 & \hfil 0.50 \\ 
+  \hline
+  \multicolumn{1}{|c|}{F1-score} & \hfil 0.90 & \hfil 0.93 & \hfil 0.85 & \hfil 0.56 \\ 
+  \hline
+\end{tabular}
+\caption{Classification report pour le modèle \texttt{NN relu 6-4}}
+  \label{Tab:Tcr}
+\end{table}
+
+\begin{table}[H]
+    \includegraphics[scale=0.5]{images/y_pred_NN_relu_6-4.png}
+    \caption{\label{HomePage} Matrice de confusion pour le modèle \texttt{NN relu 6-4}}
+\end{table}
+
+\newpage
+
+\section{Modèle \texttt{NN relu 10-8-4}}
+
+\begin{table}[ht]
+  \begin{tabular}{ m{5em} | m{1cm}| m{1cm} | m{1cm}| m{1cm} | } 
+  \cline{2-5}
+             & \multicolumn{4}{|c|}{Modèle \texttt{NN relu 10-8-4}}\\
+ \hline
+ \multicolumn{1}{|c|}{\textit{Classes}} & \hfil \texttt{c1} & \hfil \texttt{c2} & \hfil \texttt{c3} & \hfil \texttt{c4} \\ 
+  \hline
+  \multicolumn{1}{|c|}{Accuracy} & \hfil 0.95 & \hfil 0.94 & \hfil 0.95 & \hfil 0.93 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Precision} & \hfil 0.97 & \hfil 0.87 & \hfil 0.84 & \hfil 0.71 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Recall} & \hfil 0.87 & \hfil 0.98 & \hfil 0.91 & \hfil 0.52 \\ 
+  \hline
+  \multicolumn{1}{|c|}{F1-score} & \hfil 0.92 & \hfil 0.92 & \hfil 0.87 & \hfil 0.60 \\ 
+  \hline
+\end{tabular}
+\caption{Classification report pour le modèle \texttt{NN relu 10-8-4}}
+  \label{Tab:Tcr}
+\end{table}
+
+\begin{table}[H]
+    \includegraphics[scale=0.5]{images/y_pred_NN_relu_10-8-4.png}
+    \caption{\label{HomePage} Matrice de confusion pour le modèle \texttt{NN relu 10-8-4}}
+\end{table}
+
+\newpage
+
+\section{Modèle \texttt{NN relu 10-8-6}}
+
+\begin{table}[ht]
+  \begin{tabular}{ m{5em} | m{1cm}| m{1cm} | m{1cm}| m{1cm} | } 
+  \cline{2-5}
+             & \multicolumn{4}{|c|}{Modèle \texttt{NN relu 10-8-6}}\\
+ \hline
+ \multicolumn{1}{|c|}{\textit{Classes}} & \hfil \texttt{c1} & \hfil \texttt{c2} & \hfil \texttt{c3} & \hfil \texttt{c4} \\ 
+  \hline
+  \multicolumn{1}{|c|}{Accuracy} & \hfil 0.95 & \hfil 0.94 & \hfil 0.94 & \hfil 0.92 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Precision} & \hfil 0.97 & \hfil 0.90 & \hfil 0.81 & \hfil 0.63 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Recall} & \hfil 0.87 & \hfil 0.93 & \hfil 0.90 & \hfil 0.65 \\ 
+  \hline
+  \multicolumn{1}{|c|}{F1-score} & \hfil 0.92 & \hfil 0.92 & \hfil 0.85 & \hfil 0.64 \\ 
+  \hline
+\end{tabular}
+\caption{Classification report pour le modèle \texttt{NN relu 10-8-6}}
+  \label{Tab:Tcr}
+\end{table}
+
+\begin{table}[H]
+    \includegraphics[scale=0.5]{images/y_pred_NN_relu_10-8-6.png}
+    \caption{\label{HomePage} Matrice de confusion pour le modèle \texttt{NN relu 10-8-6}}
+\end{table}
+
+\newpage
+
+\section{Modèle \texttt{NN tanh 6-4}}
+
+\begin{table}[ht]
+  \begin{tabular}{ m{5em} | m{1cm}| m{1cm} | m{1cm}| m{1cm} | } 
+  \cline{2-5}
+             & \multicolumn{4}{|c|}{Modèle \texttt{NN tanh 6-4}}\\
+ \hline
+ \multicolumn{1}{|c|}{\textit{Classes}} & \hfil \texttt{c1} & \hfil \texttt{c2} & \hfil \texttt{c3} & \hfil \texttt{c4} \\ 
+  \hline
+  \multicolumn{1}{|c|}{Accuracy} & \hfil 0.91 & \hfil 0.94 & \hfil 0.92 & \hfil 0.90 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Precision} & \hfil 0.85 & \hfil 0.87 & \hfil 0.75 & \hfil 0.00 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Recall} & \hfil 0.89 & \hfil 0.99 & \hfil 0.89 & \hfil 0.00 \\ 
+  \hline
+  \multicolumn{1}{|c|}{F1-score} & \hfil 0.87 & \hfil 0.93 & \hfil 0.81 & \hfil 0.00 \\ 
+  \hline
+\end{tabular}
+\caption{Classification report pour le modèle \texttt{NN tanh 6-4}}
+  \label{Tab:Tcr}
+\end{table}
+
+\begin{table}[H]
+    \includegraphics[scale=0.5]{images/y_pred_NN_tanh_6-4.png}
+    \caption{\label{HomePage} Matrice de confusion pour le modèle \texttt{NN tanh 6-4}}
+\end{table}
+
+\newpage
+
+\section{Modèle \texttt{NN tanh 10-8-4}}
+
+\begin{table}[ht]
+  \begin{tabular}{ m{5em} | m{1cm}| m{1cm} | m{1cm}| m{1cm} | } 
+  \cline{2-5}
+             & \multicolumn{4}{|c|}{Modèle \texttt{NN tanh 10-8-4}}\\
+ \hline
+ \multicolumn{1}{|c|}{\textit{Classes}} & \hfil \texttt{c1} & \hfil \texttt{c2} & \hfil \texttt{c3} & \hfil \texttt{c4} \\ 
+  \hline
+  \multicolumn{1}{|c|}{Accuracy} & \hfil 0.94 & \hfil 0.94 & \hfil 0.92 & \hfil 0.90 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Precision} & \hfil 0.90 & \hfil 0.87 & \hfil 0.74 & \hfil 0.00 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Recall} & \hfil 0.91 & \hfil 0.98 & \hfil 0.94 & \hfil 0.00 \\ 
+  \hline
+  \multicolumn{1}{|c|}{F1-score} & \hfil 0.91 & \hfil 0.92 & \hfil 0.83 & \hfil 0.00 \\ 
+  \hline
+\end{tabular}
+\caption{Classification report pour le modèle \texttt{NN tanh 10-8-4}}
+  \label{Tab:Tcr}
+\end{table}
+
+\begin{table}[H]
+    \includegraphics[scale=0.5]{images/y_pred_NN_tanh_10-8-4.png}
+    \caption{\label{HomePage} Matrice de confusion pour le modèle \texttt{NN tanh 10-8-4}}
+\end{table}
+
+\newpage
+
+\section{Modèle \texttt{NN tanh 10-8-6}}
+
+\begin{table}[ht]
+  \begin{tabular}{ m{5em} | m{1cm}| m{1cm} | m{1cm}| m{1cm} | } 
+  \cline{2-5}
+             & \multicolumn{4}{|c|}{Modèle \texttt{NN tanh 10-8-6}}\\
+ \hline
+ \multicolumn{1}{|c|}{\textit{Classes}} & \hfil \texttt{c1} & \hfil \texttt{c2} & \hfil \texttt{c3} & \hfil \texttt{c4} \\ 
+  \hline
+  \multicolumn{1}{|c|}{Accuracy} & \hfil 0.96 & \hfil 0.95 & \hfil 0.97 & \hfil 0.94 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Precision} & \hfil 0.97 & \hfil 0.90 & \hfil 0.91 & \hfil 0.78 \\ 
+  \hline
+  \multicolumn{1}{|c|}{Recall} & \hfil 0.92 & \hfil 0.98 & \hfil 0.91 & \hfil 0.65 \\ 
+  \hline
+  \multicolumn{1}{|c|}{F1-score} & \hfil 0.94 & \hfil 0.93 & \hfil 0.91 & \hfil 0.70 \\ 
+  \hline
+\end{tabular}
+\caption{Classification report pour le modèle \texttt{NN tanh 10-8-6}}
+  \label{Tab:Tcr}
+\end{table}
+
+\begin{table}[H]
+    \includegraphics[scale=0.5]{images/y_pred_NN_tanh_10-8-6.png}
+    \caption{\label{HomePage} Matrice de confusion pour le modèle \texttt{NN tanh 10-8-6}}
+\end{table}
+
+\newpage

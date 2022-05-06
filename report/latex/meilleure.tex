@@ -1,0 +1,20 @@
+\chapter{Le meilleure modèle}
+
+\section{Comparaison des modèles}
+
+On rappelle d'abord que les classes \texttt{2} et \texttt{3} possèdent des instances plus faible que les classes \texttt{0} et \texttt{1}, ce qui explique notamment pourquoi elles peuvent posséder certaines métriques abérrantes par moment.
+
+On remarque aisément, via les classification reports, que les arbres de décision possèdent une exactitude et une précision qui augmente graduellement avec la profondeur, tandis que le rappel et le score F1 ont plutôt tendance à être stable. \newline
+Ensuite, concernant les réseaux neuronaux, on remarque que les métriques conservent, peu importe la profondeur, une certaine stabilité.
+
+Notre analyse précédente sur les classification reports se confirment ici. On retrouve, dans nos matrices de confusion, notre croissance pour les arbres de décisions et notre stabilité pour les réseaux neuronaux. On remarque également un nombre d'erreurs plus important pour les classes \texttt{2} et \texttt{3}, et en particulier la classe \texttt{3}.
+
+Ainsi, le modèle "NN tanh 10-8-6" nous apparaît évidemment comme étant le meilleur modèle. En effet, il est celui qui possède les meilleures métriques. L'exactitude élevée montre que la majorité des prédictions se sont avérées être correctes. La précision et le rappel du modèle le confirment : le modèle possède un faible taux d'erreur (i.e. une précision et un rappel élevé). Autrement dit, peu de patients (malade ou sains) ont été incorrectement diagnostiqué. De plus, le fait que le score F1 soit élevé montre que le rapport précision/rappel est optimal.
+
+\newpage
+
+\section{Les types de modèles}
+
+On remarque effectivement que les différences entre les arbres de décision et les réseaux de neurones ne sont pas très grandes. Pourtant, de manière générale et d'après nos analyses, ce sont les réseaux neuronaux qui se démarquent le plus. En effet, ces derniers possèdent une exactitude bien supérieure à celle des arbres binaires et le score F1 indique un meilleur rapport précision/rappel. Ceci signifie notamment que le taux d'erreur est plus faible pour les réseaux de neurones et que, par conséquent, ils ont plus fiables. Ceci est un point particulièrement important dans le cadre de diagnostiques médicaux.
+
+Cependant, les réseaux neuronaux sont extrêmement complexes. A tel point que cela complique la justification des décisions prises par ce modèle. Cela découle naturellement du nombre de calculs et de noeuds que réalise ce modèle, tandis que les arbres de décisions sont beaucoup plus simples. En effet, rien que d'un point de vu graphique, les justifications sont plus compréhensible. C'est pourquoi, si nous devions justifier un diagnostic médical, nous aurions alors tendance à privilégier les arbres de décision aux réseaux de neurones.
