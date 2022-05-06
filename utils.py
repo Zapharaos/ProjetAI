@@ -1,3 +1,4 @@
+import os
 from typing import List
 
 import matplotlib.pyplot as plt
@@ -60,19 +61,6 @@ class Utility:
         # values of Si on its diagonal.
         D = -np.outer(Sz, Sz) + np.diag(Sz.flatten())
         return D
-
-    @staticmethod
-    def cross_entropy_loss(p, y):
-        """
-        Source: https://github.com/eliben/deep-learning-samples/blob/master/softmax/softmax.py
-
-        Cross-entropy loss between predicted and expected probabilities.
-        p: vector of predicted probabilities.
-        y: vector of expected probabilities. Has to be the same shape as p.
-        Returns a scalar.
-        """
-        assert (p.shape == y.shape)
-        return -np.sum(y * np.log(p))
 
     @staticmethod
     def cross_entropy_cost(y_hat, y):
@@ -141,8 +129,13 @@ def display_confusion_matrix(confusion_mtx: List,
         plt.show()
         return
 
+    dir_name = os.path.dirname(file_name)
+    if not os.path.exists(dir_name):
+        os.makedirs(dir_name)
+
     # Save figure
     plt.savefig(file_name)
+    plt.clf()
 
 
 def display_classification_report_table(data: List[List[float]],
@@ -173,6 +166,10 @@ def display_classification_report_table(data: List[List[float]],
         plt.show(aspect='auto')
         return
 
+    dir_name = os.path.dirname(file_name)
+    if not os.path.exists(dir_name):
+        os.makedirs(dir_name)
+
     # Save figure
     plt.savefig(file_name)
 
@@ -197,6 +194,7 @@ def calculate_accuracy(y_pred, y_real):
     max_y_pred = np.where(y_pred == np.amax(y_pred))[0][0]
     max_y_real = np.where(y_real == np.amax(y_real))[0][0]
     return int(max_y_pred == max_y_real)
+
 
 class ClassificationReport:
     FP: List[int]
