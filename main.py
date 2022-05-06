@@ -11,27 +11,70 @@ from sklearn.metrics import precision_recall_fscore_support as score
 import seaborn as sea
 import matplotlib.pyplot as plt
 
+from neuronalnetwork import NeuralNet
 from utils import confusion_matrix, display_confusion_matrix, \
-    display_classification_report_table, ClassificationReport
+    display_classification_report_table, ClassificationReport, Utility
 
 
-def prepare_data(file_name: str):
+def part2(file_name: str):
     df = pd.read_csv(file_name)
     df_columns = df.columns.values.tolist()
 
     features = df_columns[0:14]
     label = df_columns[14:]
 
+    # Normalize data
+    for col in features:
+        big = np.max(df[col])
+        df[col] /= big
+
     X = df[features]
-    y = df[label]
 
-    y = pd.get_dummies(y)  # one-hot
-
-    # Question 2 / 3
-    print(df['Class'].value_counts())
+    y = pd.get_dummies(df, columns=label)  # one-hot
+    # One-hot not working wtf?
+    y = y[y.columns.values.tolist()[14:]]  # fix
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20,
                                                         random_state=42)
+
+    print(y_test)
+
+    # Initialization of the model
+    model = NeuralNet(X_train=X_train, y_train=y_train, X_test=X_test,
+                      y_test=y_test, activation='tanh', epoch=100,
+                      hidden_layer_sizes=(10, 8, 6), heuristic='he-et-al')
+    # Fitting the model with data
+    gr_train, gr_test = model.train(X_train, y_train, X_test, y_test)
+
+    accuracies, y_pred = model.predict(X_test, y_test)
+    print("Accuracy: " + str(np.mean(accuracies)))
+    print(y_pred)
+    print(y_test)
+
+    new_pred = []
+    for pred in y_pred:
+        new_pred.append(np.argmax(pred, axis=0))
+    y_pred = new_pred
+
+    print(y_pred)
+
+    y_test = np.argmax(y_test.values, axis=1)
+
+    print(y_test)
+
+    # Confusion matrix
+    matrix = confusion_matrix(y_pred=y_pred, y_test=y_test)
+    print(matrix)
+
+    # Plotting the graph of the errors
+    plt.plot(gr_train, label='train')
+    plt.plot(gr_test, label='test')
+    plt.legend()
+    plt.title('NN relu 6-4')
+    plt.show()
+
+    display_confusion_matrix(matrix, class_names=["0", "1", "2", "3"])
+
 
 
 def part3():
@@ -102,6 +145,6 @@ def generate_plots(y_test_file: str = "",
 
 
 if __name__ == '__main__':
-    prepare_data('data/synthetic.csv')
+    part2('data/synthetic.csv')
 
-    part3()
+    # part3()
